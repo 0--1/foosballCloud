@@ -1,0 +1,26 @@
+<div>
+	<h3>Series</h3>
+
+	<table>
+		<tr ng-repeat="serie in seriesData">
+			<td>
+				<div>Prize: <span>{{serie.prize}}</span></div>
+				<div>Games played: {{serie.matches.length}}/{{serie.length}}</div>
+				<div>Go to serie</div>
+			</td>
+			<td>
+				<div><img ng-src="images/{{playersData[serie.team1[0] - 1].image}}" class="img img-circle" width="70px"></div>
+				<div><img ng-src="images/{{playersData[serie.team1[1] - 1].image}}" class="img img-circle" width="70px"></div>
+			</td>
+			<td>
+				<div ng-repeat="match in serie.matches">
+					{{match[0]}} - {{match[1]}}
+				</div>
+			</td>
+			<td>
+				<div><img ng-src="images/{{playersData[serie.team2[0] - 1].image}}" class="img img-circle" width="70px"></div>
+				<div><img ng-src="images/{{playersData[serie.team2[1] - 1].image}}" class="img img-circle" width="70px"></div>
+			</td>
+		</tr>
+	</table>
+</div>

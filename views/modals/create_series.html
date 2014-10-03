@@ -1,0 +1,33 @@
+<div class="modal-content">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="myModalLabel">Create a New Series</h4>
+	</div>
+	<div class="modal-body">
+		<div>
+			<table>
+				<tr><td>Prize:</td><td><input type="text" ng-model="newSeriesPrize"></td></tr>
+				<tr><td>Length:</td><td><input type="number" ng-model="newSeriesLength"></td></tr>
+			</table>
+			<div>
+				<div style="display:inline-block;width:49%;">
+					<div>Team 1</div>
+					<div>
+						<img ng-repeat="player in playersData" ng-src="images/{{((teams.one.length > 1 && teams.one.indexOf(player.id) < 0) || teams.two.indexOf(player.id) > -1) ? 'bw-' : ''}}{{player.image}}" class="img img-circle" width="60px" ng-class="{'fa-spin': teams.one.indexOf(player.id) > -1}" ng-click="assignPlayer('one', player.id)">
+					</div>
+				</div>
+				<div style="display:inline-block;width:49%;">
+					<div>Team 2</div>
+					<div>
+						<img ng-repeat="player in playersData" ng-src="images/{{((teams.two.length > 1 && teams.two.indexOf(player.id) < 0) || teams.one.indexOf(player.id) > -1) ? 'bw-' : ''}}{{player.image}}" class="img img-circle" width="60px" ng-class="{'fa-spin': teams.two.indexOf(player.id) > -1}" ng-click="assignPlayer('two', player.id)">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<div ng-show="createAlert" class="alert alert-danger" role="alert">You have to have two players in each team!</div>
+		<button type="button" class="btn btn-default" ng-click="cancelCreateSeries()">Cancel</button>
+		<button type="button" class="btn btn-primary" ng-click="createSeries()">Create</button>
+	</div>
+</div>

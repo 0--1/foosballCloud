@@ -1,0 +1,34 @@
+<div>
+	<h3>Series</h3>
+
+	<table>
+		<tr>
+			<td colspan="3">
+				<div></div>
+				<div><span class="fa fa-trophy"></span>{{seriesData[0].prize}}</div>
+				<div>{{seriesData[0].length}}</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div><img ng-src="images/{{playersData[seriesData[0].team1player1 - 1].image}}" class="img img-circle" width="100px"></div>
+				<div><img ng-src="images/{{playersData[seriesData[0].team1player2 - 1].image}}" class="img img-circle" width="100px"></div>
+			</td>
+			<td>
+				<div ng-repeat="series in seriesData" ng-show="seriesData[0].series_id">
+					{{series.team1score}} - {{series.team2score}}
+				</div>
+				<div ng-show="enterScore"><input type="number" ng-model="newScoreT1"> - <input type="number" ng-model="newScoreT2"></div>
+				<div ng-show="enterScore">
+					<i class="fa fa-check-circle" ng-click="submitScore()"></i>
+					<i class="fa fa-times-circle" ng-click="cancelScore()"></i>
+				</div>
+				<div ng-hide="enterScore" ng-click="recordScore()">Record score</div>
+			</td>
+			<td>
+				<div><img ng-src="images/{{playersData[seriesData[0].team2player1 - 1].image}}" class="img img-circle" width="100px"></div>
+				<div><img ng-src="images/{{playersData[seriesData[0].team2player2 - 1].image}}" class="img img-circle" width="100px"></div>
+			</td>
+		</tr>
+	</table>
+</div>
