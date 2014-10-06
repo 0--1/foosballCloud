@@ -2,8 +2,8 @@
 error_reporting(6143);
 
 $host = "localhost";
-$user = "behrooz";
-$pass = "12345";
+$user = "root";
+$pass = "";
 $db = "foosball";
 
 $con = mysql_connect($host, $user, $pass);
