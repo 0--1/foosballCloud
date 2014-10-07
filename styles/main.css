@@ -2,6 +2,11 @@ nav img {
 	width: 50px;
 	margin-top: -0.85em;
 }
+
+nav .navbar-right .fa {
+	font-size: 1.3em;
+	margin-left: 0.5em;
+}
 /* globals */
 .clickable {
 	cursor: pointer;
