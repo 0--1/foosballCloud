@@ -5,20 +5,38 @@
 	<link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap-theme.css">
 	<link rel="stylesheet" type="text/css" href="vendors/font-awesome/font-awesome-local.css">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body ng-app="foosballApp" ng-controller="mainCtrl">
-	<header>
-		<div ng-if="user.login">
-			<ul>
-				<li ng-click="changeUrl('dashboard')">Dashboard</li>
-				<li ng-click="changeUrl('players/0')">Series</li>
-				<li ng-click="changeUrl('charts')">Top Charts</li>
-				<li ng-click="changeUrl('players')">Players</li>
-				<li ng-click="logout()">Log out</li>
-			</ul>
-			<span class="fa fa-plus" ng-click="createSeriesModal()"></span>
-		</div>
-	</header>
+
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img src="images/logo1.png"></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#/players/0"><i class="fa fa-futbol-o"></i>Series</a></li>
+					<li><a href="#/players"><i class="fa fa-male"></i>Players</a></li>
+					<li><a href="#"><i class="fa fa-line-chart"></i>Top Charts</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><span class="fa fa-plus clickable" ng-click="createSeriesModal()"></span></a></li>
+					<li><a href="#"><span class="fa fa-search clickable" ng-click="createSeriesModal()"></span></span></a></li>
+					<li><a href="#"><span class="fa fa-sign-out clickable" ng-click="logout()"></span></a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
 
 	<section ng-view></section>
 

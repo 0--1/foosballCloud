@@ -1,4 +1,4 @@
-angular.module('foosballApp').controller('newSeriesCtrl', function($scope, $http) {
+angular.module('foosballApp').controller('newSeriesCtrl', function($scope, $http, $location) {
 	$scope.assignPlayer = function(team, pid) {
 		var ind = $scope.teams[team].indexOf(pid);
 		var ind1 = $scope.teams.one.indexOf(pid);
