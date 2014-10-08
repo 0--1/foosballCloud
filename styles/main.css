@@ -7,6 +7,11 @@ nav .navbar-right .fa {
 	font-size: 1.3em;
 	margin-left: 0.5em;
 }
+
+nav {
+	border-radius: 0 !important;
+}
+
 /* globals */
 .clickable {
 	cursor: pointer;
