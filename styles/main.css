@@ -12,6 +12,22 @@ nav {
 	border-radius: 0 !important;
 }
 
+nav a.navbar-brand.visible-xs {
+	border-right: 1px solid #999;
+	width: 20%;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+nav a.navbar-brand.visible-xs:last-child {
+	border-right: 0;
+}
+
+nav a.navbar-brand.visible-xs.active {
+	color: #fff;
+	background-color: #080808;
+}
+
 /* globals */
 .clickable {
 	cursor: pointer;
