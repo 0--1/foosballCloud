@@ -3,15 +3,15 @@ require_once('db.php');
 
 $sql = $_GET['sql'];
 
-print_r($_GET);
+// print_r($_GET);
 
-// $res = mysql_query($sql);
+$res = mysql_query($sql);
 
-// $output = "";
+$output = "";
 
-// while($row = mysql_fetch_assoc($res)) {
-// 	$output[] = $row;
-// }
+while($row = mysql_fetch_assoc($res)) {
+	$output[] = $row;
+}
 
-// print json_encode($output);
+print json_encode($output);
 ?>

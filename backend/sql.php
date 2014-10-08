@@ -23,6 +23,7 @@
 						});
 					request.success(function(data) {
 						console.log(data);
+						$scope.results = data;
 					});
 				}
 			});
@@ -33,5 +34,8 @@
 		Enter SQL command: <input type="text" ng-model="sql">
 		<button ng-click="submit()">Execute</button>
 	</div>
+	<pre>
+		{{results}}
+	</pre>
 </body>
 </html>
