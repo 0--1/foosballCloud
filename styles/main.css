@@ -52,8 +52,7 @@ nav .navbar-right a:last-child {
 /* players */
 
 #players .playerBox {
-	display: inline-block;
-	width: 200px;
+	padding-bottom: 2em;
 }
 
 #players .playerBox .playerImage {
