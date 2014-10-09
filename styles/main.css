@@ -1,15 +1,28 @@
+/* navigation */
 nav img {
 	width: 50px;
 	margin-top: -0.85em;
 }
 
+nav {
+	border-radius: 0 !important;
+}
+
+nav .navbar-header {
+	margin-right: 25% !important;
+}
+
+nav .navbar-nav {
+	font-size: 1.4em;
+}
+
+nav .navbar-nav .fa {
+	padding-right: 0.3em;
+}
+
 nav .navbar-right .fa {
 	font-size: 1.3em;
 	margin-left: 0.5em;
-}
-
-nav {
-	border-radius: 0 !important;
 }
 
 nav a.navbar-brand.visible-xs {
@@ -26,6 +39,34 @@ nav a.navbar-brand.visible-xs:last-child {
 nav a.navbar-brand.visible-xs.active {
 	color: #fff;
 	background-color: #080808;
+}
+
+nav .navbar-right a {
+	padding: 0.6em 0.7em;
+}
+
+nav .navbar-right a:last-child {
+	padding-right: 0;
+}
+
+/* players */
+
+#players .playerBox {
+	display: inline-block;
+	width: 200px;
+}
+
+#players .playerBox .playerImage {
+	clear: both;
+	text-align: center;
+}
+
+#players .playerBox .playerName {
+	clear: both;
+	text-align: center;
+	padding-top: 0.2em;
+	font-size: 1.3em;
+	font-weight: bold;
 }
 
 /* globals */

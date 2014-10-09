@@ -1,6 +1,11 @@
 <div id="players">
 	<h3>Players</h3>
-	<div ng-repeat="player in playersData | orderBy:'name'">
-		<a ng-href="#/players/{{player.id}}"><img ng-src="images/{{player.image}}" class="img img-circle" width="150px"><span>{{player.name}}<span></a>
+	<div class="playerBox" ng-repeat="player in playersData | orderBy:'name'">
+		<div class="playerImage">
+			<a ng-href="#/players/{{player.id}}"><img ng-src="images/{{player.image}}" class="img img-circle" width="150px"></a>
+		</div>
+		<div class="playerName">
+			<a ng-href="#/players/{{player.id}}">{{player.name}}</a>
+		</div>
 	</div>
 </div>
