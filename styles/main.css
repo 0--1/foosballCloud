@@ -50,7 +50,6 @@ nav .navbar-right a:last-child {
 }
 
 /* players */
-
 #players .playerBox {
 	padding-bottom: 2em;
 }
@@ -66,6 +65,40 @@ nav .navbar-right a:last-child {
 	padding-top: 0.2em;
 	font-size: 1.3em;
 	font-weight: bold;
+}
+
+/* new series modal */
+#newSeries tr td {
+	padding-bottom: 1em;
+}
+
+#newSeries .playerSelected {
+	border: 5px solid green;
+}
+
+#newSeries .title {
+	font-weight: bold;
+	padding-right: 1em;
+	vertical-align: middle;
+}
+
+#newSeries .teamTitle {
+	text-align: center;
+	font-weight: bold;
+}
+
+#newSeries img {
+	margin: 0.5em;
+}
+
+#newSeries .teams {
+	display:inline-block;
+	width:49%;
+	text-align: center;
+}
+
+#newSeries .teams:first-child {
+	border-right: 1px solid #BBB;
 }
 
 /* globals */
