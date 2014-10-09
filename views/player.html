@@ -3,26 +3,49 @@
 		<img ng-src="images/{{playersData[playerId - 1].image}}" class="img img-circle" width="75px"> {{playersData[playerId - 1].name}}
 	</div>
 
-	<table>
-		<tr ng-repeat="serie in seriesData">
-			<td>
-				<div>Prize: <span>{{serie.prize}}</span></div>
-				<div>Games played: {{serie.matches.length}}/{{serie.length}}</div>
-				<div><a ng-href="#/series/{{serie.id}}">Go to series</a></div>
-			</td>
-			<td>
-				<div><a ng-href="#/players/{{serie.team1player1}}"><img ng-src="images/{{playersData[serie.team1player1 - 1].image}}" class="img img-circle" width="70px"></a></div>
-				<div><a ng-href="#/players/{{serie.team1player2}}"><img ng-src="images/{{playersData[serie.team1player2 - 1].image}}" class="img img-circle" width="70px"></a></div>
-			</td>
-			<td>
-				<div ng-repeat="match in serie.matches">
-					{{match[0]}} - {{match[1]}}
+	<div class="playerOuter col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="serie in seriesData">
+		<div class="playerInner">
+			<div class="seriesInfoHolder">
+				<span class="seriesTitle">Prize:</span>
+				<span class="seriesValue">{{serie.prize}}</span>
+			</div>
+			<div class="seriesInfoHolder">
+				<span class="seriesTitle">Games played:</span>
+				<span class="seriesValue">{{serie.played}}/{{serie.length}}</span>
+			</div>
+			<div>
+				<div class="seriesInfo">
+					<div>
+						<a ng-href="#/players/{{serie.team1player1}}">
+							<img ng-src="images/{{playersData[serie.team1player1 - 1].image}}" class="img img-circle" width="70px">
+						</a>
+					</div>
+					<div>
+						<a ng-href="#/players/{{serie.team1player2}}">
+							<img ng-src="images/{{playersData[serie.team1player2 - 1].image}}" class="img img-circle" width="70px">
+						</a>
+					</div>
 				</div>
-			</td>
-			<td>
-				<div><a ng-href="#/players/{{serie.team2player1}}"><img ng-src="images/{{playersData[serie.team2player1 - 1].image}}" class="img img-circle" width="70px"></a></div>
-				<div><a ng-href="#/players/{{serie.team2player2}}"><img ng-src="images/{{playersData[serie.team2player2 - 1].image}}" class="img img-circle" width="70px"></a></div>
-			</td>
-		</tr>
-	</table>
+				<div class="seriesInfo">
+					<div>
+						<a class="btn btn-default seriesButton" ng-href="#/series/{{serie.id}}">
+							<span>Open</span>
+						</a>
+					</div>
+				</div>
+				<div class="seriesInfo">
+					<div>
+						<a ng-href="#/players/{{serie.team2player1}}">
+							<img ng-src="images/{{playersData[serie.team2player1 - 1].image}}" class="img img-circle" width="70px">
+						</a>
+					</div>
+					<div>
+						<a ng-href="#/players/{{serie.team2player2}}">
+							<img ng-src="images/{{playersData[serie.team2player2 - 1].image}}" class="img img-circle" width="70px">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

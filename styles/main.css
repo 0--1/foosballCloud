@@ -101,6 +101,55 @@ nav .navbar-right a:last-child {
 	border-right: 1px solid #BBB;
 }
 
+/* player */
+#player .seriesInfoHolder {
+	padding-left: 2em;
+}
+
+#player .seriesTitle {
+	font-size: 1.2em;
+	padding-right: 1em;
+}
+
+#player .seriesValue {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+#player .playerOuter {
+	padding: 1em;
+}
+
+#player .playerInner {
+	background-color: #DDD;
+	padding: 2em;
+	border-radius: 3px;
+}
+
+#player .seriesInfo {
+	width: 32%;
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	margin-top: 1em;
+}
+
+#player .seriesInfo img {
+	margin-bottom: 1em;
+}
+
+#player .seriesButton {
+	width: 100%;
+	height: 90px;
+	padding-top: 1.9em;
+	margin-top: 2em;
+	border-radius: 100%;
+}
+
+#player .seriesButton span {
+	font-size: 1.5em;
+}
+
 /* globals */
 .clickable {
 	cursor: pointer;

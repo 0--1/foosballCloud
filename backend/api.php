@@ -8,7 +8,7 @@ switch ($action) {
 		break;
 
 	case 'as': // add series
-		$sql = "INSERT INTO series VALUES ('', '".$_GET['prize']."', '".$_GET['length']."', '".$_GET['t1p1']."', '".$_GET['t1p2']."', '".$_GET['t2p1']."', '".$_GET['t2p2']."', 0)";
+		$sql = "INSERT INTO series VALUES ('', '".$_GET['prize']."', '".$_GET['length']."', '".$_GET['t1p1']."', '".$_GET['t1p2']."', '".$_GET['t2p1']."', '".$_GET['t2p2']."', 0, 0)";
 		mysql_query($sql);
 		print(mysql_insert_id());
 		break;
@@ -30,10 +30,11 @@ switch ($action) {
 		break;
 
 	case 'ls': // list series
-		$sql = "SELECT * FROM series";
+		$sql = "SELECT series.id, prize, length, team1player1, team1player2, team2player1, team2player2, done, redeemed, COUNT(matches.id) AS played FROM series LEFT JOIN matches ON matches.series_id = series.id";
 		if($_GET['pid'] > 0) {
 			$sql .= " WHERE (team1player1 = ".$_GET['pid']." OR team1player2 = ".$_GET['pid']." OR team2player1 = ".$_GET['pid']." OR team2player2 = ".$_GET['pid'].")";
 		}
+		$sql .= " GROUP BY series.id";
 		$res = mysql_query($sql);
 		$output = "";
 		while($row = mysql_fetch_assoc($res)) {
