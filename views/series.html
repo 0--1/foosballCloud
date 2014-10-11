@@ -1,34 +1,54 @@
-<div>
-	<h3>Series</h3>
-
-	<table>
-		<tr>
-			<td colspan="3">
-				<div></div>
-				<div><span class="fa fa-trophy"></span>{{seriesData[0].prize}}</div>
-				<div>{{seriesData[0].length}}</div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<div><img ng-src="images/{{playersData[seriesData[0].team1player1 - 1].image}}" class="img img-circle" width="100px"></div>
-				<div><img ng-src="images/{{playersData[seriesData[0].team1player2 - 1].image}}" class="img img-circle" width="100px"></div>
-			</td>
-			<td>
+<div id="series">
+	<div>
+		<div class="seriesInfo">
+			<div><span class="fa fa-trophy"></span><span>{{seriesData[0].prize}}</span></div>
+			<div><span class="fa fa-futbol-o"></span><span>{{seriesData[0].length}}</span></div>
+		</div>
+		<div>
+			<div class="col-xs-3 teams">
+				<div>
+					<a ng-href="#/players/{{seriesData[0].team1player1}}">
+						<img ng-src="images/{{playersData[seriesData[0].team1player1 - 1].image}}" class="img img-circle">
+					</a>
+				</div>
+				<div>
+					<a ng-href="#/players/{{serie.team2player2}}">
+						<img ng-src="images/{{playersData[seriesData[0].team1player2 - 1].image}}" class="img img-circle">
+					</a>
+				</div>
+			</div>
+			<div class="col-xs-6 scores">
 				<div ng-repeat="series in seriesData" ng-show="seriesData[0].series_id">
 					{{series.team1score}} - {{series.team2score}}
 				</div>
-				<div ng-show="enterScore"><input type="number" ng-model="newScoreT1"> - <input type="number" ng-model="newScoreT2"></div>
+				<div ng-show="enterScore">
+					<input type="number" class="form-control" style="width: 40%; display: inline-block;" ng-model="newScoreT1"> - <input type="number" class="form-control" style="width: 40%; display: inline-block;" ng-model="newScoreT2">
+				</div>
+<!-- 				<div ng-show="enterScore">
+					<select>
+						<option>1</option>
+					</select>
+					 - 
+					<select></select>
+				</div> -->
 				<div ng-show="enterScore">
 					<i class="fa fa-check-circle" ng-click="submitScore()"></i>
 					<i class="fa fa-times-circle" ng-click="cancelScore()"></i>
 				</div>
 				<div ng-hide="enterScore" ng-click="recordScore()">Record score</div>
-			</td>
-			<td>
-				<div><img ng-src="images/{{playersData[seriesData[0].team2player1 - 1].image}}" class="img img-circle" width="100px"></div>
-				<div><img ng-src="images/{{playersData[seriesData[0].team2player2 - 1].image}}" class="img img-circle" width="100px"></div>
-			</td>
-		</tr>
-	</table>
+			</div>
+			<div class="col-xs-3 teams">
+				<div>
+					<a ng-href="#/players/{{serie.team2player1}}">
+						<img ng-src="images/{{playersData[seriesData[0].team2player1 - 1].image}}" class="img img-circle">
+					</a>
+				</div>
+				<div>
+					<a ng-href="#/players/{{serie.team2player2}}">
+						<img ng-src="images/{{playersData[seriesData[0].team2player2 - 1].image}}" class="img img-circle">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

@@ -14,7 +14,7 @@
 				<span class="seriesValue">{{serie.played}}/{{serie.length}}</span>
 			</div>
 			<div>
-				<div class="seriesInfo">
+				<div class="seriesInfo teams">
 					<div>
 						<a ng-href="#/players/{{serie.team1player1}}">
 							<img ng-src="images/{{playersData[serie.team1player1 - 1].image}}" class="img img-circle" width="70px">
@@ -29,11 +29,11 @@
 				<div class="seriesInfo">
 					<div>
 						<a class="btn btn-default seriesButton" ng-href="#/series/{{serie.id}}">
-							<span>Open</span>
+							<span>View</span>
 						</a>
 					</div>
 				</div>
-				<div class="seriesInfo">
+				<div class="seriesInfo teams">
 					<div>
 						<a ng-href="#/players/{{serie.team2player1}}">
 							<img ng-src="images/{{playersData[serie.team2player1 - 1].image}}" class="img img-circle" width="70px">

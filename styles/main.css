@@ -8,10 +8,6 @@ nav {
 	border-radius: 0 !important;
 }
 
-nav .navbar-header {
-	margin-right: 25% !important;
-}
-
 nav .navbar-nav {
 	font-size: 1.4em;
 }
@@ -47,6 +43,10 @@ nav .navbar-right a {
 
 nav .navbar-right a:last-child {
 	padding-right: 0;
+}
+
+nav .navbar-header .spacer {
+	width: 30% !important;
 }
 
 /* players */
@@ -134,20 +134,50 @@ nav .navbar-right a:last-child {
 	margin-top: 1em;
 }
 
+#player .seriesInfo.teams {
+	border: 2px dashed #999;
+	border-radius: 40%;
+}
+
 #player .seriesInfo img {
-	margin-bottom: 1em;
+	margin: 0.5em 0;
 }
 
 #player .seriesButton {
-	width: 100%;
-	height: 90px;
+	width: 80px;
+	height: 80px;
 	padding-top: 1.9em;
-	margin-top: 2em;
+	margin-top: 3em;
 	border-radius: 100%;
 }
 
 #player .seriesButton span {
 	font-size: 1.5em;
+}
+
+/* series */
+#series .seriesInfo {
+	width: 100%;
+	font-size: 2em;
+	text-align: center;
+}
+
+#series .teams {
+	text-align: center;
+}
+
+#series .teams img {
+	width: 100%;
+	max-width: 150px;
+	margin: 0.5em;
+}
+
+#series .scores {
+	text-align: center;
+	font-size: 1.5em;
+	border-right: 1px solid #999;
+	border-left: 1px solid #999;
+	height: 100%;
 }
 
 /* globals */
