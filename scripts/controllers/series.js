@@ -11,6 +11,11 @@ angular.module('foosballApp').controller('seriesCtrl', function($scope, $http, $
 		$scope.enterScore = false;
 
 		$scope.loadData();
+
+		$scope.scores = [];
+		for(var i = 0; i < 101; i++) {
+			$scope.scores[i] = i;
+		}
 	}
 
 	$scope.loadData = function() {

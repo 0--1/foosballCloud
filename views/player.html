@@ -3,7 +3,7 @@
 		<img ng-src="images/{{playersData[playerId - 1].image}}" class="img img-circle" width="75px"> {{playersData[playerId - 1].name}}
 	</div>
 
-	<div class="playerOuter col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="serie in seriesData">
+	<div class="playerOuter col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="serie in seriesData">
 		<div class="playerInner">
 			<div class="seriesInfoHolder">
 				<span class="seriesTitle">Prize:</span>
@@ -26,7 +26,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="seriesInfo">
+				<div class="seriesInfo gotoScore">
 					<div>
 						<a class="btn btn-default seriesButton" ng-href="#/series/{{serie.id}}">
 							<span>View</span>

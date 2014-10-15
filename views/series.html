@@ -22,15 +22,13 @@
 					{{series.team1score}} - {{series.team2score}}
 				</div>
 				<div ng-show="enterScore">
-					<input type="number" class="form-control" style="width: 40%; display: inline-block;" ng-model="newScoreT1"> - <input type="number" class="form-control" style="width: 40%; display: inline-block;" ng-model="newScoreT2">
+					<input type="number" class="form-control" ng-model="newScoreT1"> - <input type="number" class="form-control" ng-model="newScoreT2">
 				</div>
-<!-- 				<div ng-show="enterScore">
-					<select>
-						<option>1</option>
-					</select>
+				<div ng-show="enterScore">
+					<select class="form-control" ng-model="newScoreT1" ng-init="newScoreT1 = 0" ng-options="score for score in scores"></select>
 					 - 
-					<select></select>
-				</div> -->
+					<select class="form-control" ng-model="newScoreT2" ng-init="newScoreT2 = 0" ng-options="score for score in scores"></select>
+				</div>
 				<div ng-show="enterScore">
 					<i class="fa fa-check-circle" ng-click="submitScore()"></i>
 					<i class="fa fa-times-circle" ng-click="cancelScore()"></i>
