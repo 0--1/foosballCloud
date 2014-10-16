@@ -16,7 +16,12 @@ switch ($action) {
 	case 'am': // add a match
 		$sql = "INSERT INTO matches VALUES ('',now(),'".$_GET['sid']."','".$_GET['t1s']."','".$_GET['t2s']."')";
 		mysql_query($sql);
-		print(mysql_insert_id());
+
+		if($_GET['done'] === 'true') {
+			$sql = 'UPDATE series SET done = \'1\' WHERE id = '.$_GET['sid'];
+			mysql_query($sql);
+		}
+		// print(mysql_insert_id());
 		break;
 
 	case 'lp': // list players
@@ -53,6 +58,11 @@ switch ($action) {
 		write($output);
 		break;
 	
+	case 'mr': // mark as redeemed
+		$sql = 'UPDATE series SET redeemed = \'1\' WHERE id = '.$_GET['sid'];
+		mysql_query($sql);
+		break;
+
 	default:
 		break;
 }

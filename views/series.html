@@ -1,8 +1,9 @@
 <div id="series">
 	<div>
 		<div class="seriesInfo">
-			<div><span class="fa fa-trophy"></span><span>{{seriesData[0].prize}}</span></div>
-			<div><span class="fa fa-futbol-o"></span><span>{{seriesData[0].length}}</span></div>
+			<div><span class="fa fa-trophy" ng-class="{'fa-spin': seriesData[0].done == 1 && seriesData[0].redeemed == 0}"></span><span>{{seriesData[0].prize}}</span></div>
+			<div><span class="fa fa-futbol-o" ng-class="{'fa-spin': seriesData[0].done == 0}"></span><span>{{seriesData[0].length}}</span></div>
+			<div><span>{{wins[0]}} - {{wins[1]}}</span></div>	
 		</div>
 		<div>
 			<div class="col-xs-3 teams">
@@ -12,7 +13,7 @@
 					</a>
 				</div>
 				<div>
-					<a ng-href="#/players/{{serie.team2player2}}">
+					<a ng-href="#/players/{{seriesData[0].team1player2}}">
 						<img ng-src="images/{{playersData[seriesData[0].team1player2 - 1].image}}" class="img img-circle">
 					</a>
 				</div>
@@ -33,16 +34,17 @@
 					<i class="fa fa-check-circle" ng-click="submitScore()"></i>
 					<i class="fa fa-times-circle" ng-click="cancelScore()"></i>
 				</div>
-				<div ng-hide="enterScore" ng-click="recordScore()">Record score</div>
+				<div ng-hide="enterScore || seriesData[0].done == 1" ng-click="recordScore()">Record score</div>
+				<button ng-show="seriesData[0].done == 1" class="btn btn-primary" ng-click="redeem()">Mark as Redeemed</button>
 			</div>
 			<div class="col-xs-3 teams">
 				<div>
-					<a ng-href="#/players/{{serie.team2player1}}">
+					<a ng-href="#/players/{{seriesData[0].team2player1}}">
 						<img ng-src="images/{{playersData[seriesData[0].team2player1 - 1].image}}" class="img img-circle">
 					</a>
 				</div>
 				<div>
-					<a ng-href="#/players/{{serie.team2player2}}">
+					<a ng-href="#/players/{{seriesData[0].team2player2}}">
 						<img ng-src="images/{{playersData[seriesData[0].team2player2 - 1].image}}" class="img img-circle">
 					</a>
 				</div>

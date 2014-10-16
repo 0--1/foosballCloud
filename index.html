@@ -23,7 +23,7 @@
 				<a class="navbar-brand" href="#"><img src="images/logo1.png"></i></a>
 				<a class="navbar-brand visible-xs" ng-class="{active: page == 0 ? 'active' : ''}" href="#/players/0" ng-click="page = 0"><i class="fa fa-trophy"></i></a>
 				<a class="navbar-brand visible-xs" ng-class="{active: page == 1 ? 'active' : ''}" href="#/players" ng-click="page = 1"><i class="fa fa-male"></i></a>
-				<a class="navbar-brand visible-xs" href="#" ng-click="createSeriesModal()"><i class="fa fa-plus"></i></a>
+				<a class="navbar-brand visible-xs" ng-click="createSeriesModal()"><i class="fa fa-plus"></i></a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -34,7 +34,7 @@
 					<li ng-class="{active: page == 2 ? 'active' : ''}"><a href="#/charts" ng-click="page = 2"><i class="fa fa-line-chart"></i>Top Charts</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right hidden-xs">
-					<li><a href="#"><i class="fa fa-plus" ng-click="createSeriesModal()"></i></a></li>
+					<li><a class="clickable"><i class="fa fa-plus" ng-click="createSeriesModal()"></i></a></li>
 					<li><a href="#"><i class="fa fa-search" ng-click="createSeriesModal()"></i></a></li>
 					<li><a href="#"><i class="fa fa-sign-out" ng-click="logout()"></i></a></li>
 				</ul>
@@ -47,7 +47,7 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
-	<div class="row">
+	<div>
 		<div class="col-sm-1 col-md-2"></div>
 		<section ng-view class="col-sm-10 col-md-8"></section>
 		<div class="col-sm-1 col-md-2"></div>
