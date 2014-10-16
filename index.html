@@ -20,14 +20,23 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><img src="images/logo1.png"></i></a>
-				<a class="navbar-brand visible-xs" ng-class="{active: page == 0 ? 'active' : ''}" href="#/players/0" ng-click="page = 0"><i class="fa fa-trophy"></i></a>
-				<a class="navbar-brand visible-xs" ng-class="{active: page == 1 ? 'active' : ''}" href="#/players" ng-click="page = 1"><i class="fa fa-male"></i></a>
-				<a class="navbar-brand visible-xs" ng-click="createSeriesModal()"><i class="fa fa-plus"></i></a>
+				<a class="navbar-brand" href="#">
+					<img src="images/logo1.png">
+				</a>
+				<a class="navbar-brand visible-xs" ng-class="{active: page == 0 ? 'active' : ''}" href="#/players/0" ng-click="page = 0">
+					<i class="fa fa-trophy"></i>
+				</a>
+				<a class="navbar-brand visible-xs" ng-class="{active: page == 1 ? 'active' : ''}" href="#/players" ng-click="page = 1">
+					<i class="fa fa-male"></i>
+				</a>
+				<a class="navbar-brand visible-xs" ng-click="createSeriesModal()">
+					<i class="fa fa-plus"></i>
+				</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav hidden-xs col-lg-4 col-md-3 col-sm-1"></ul>
 				<ul class="nav navbar-nav hidden-xs">
 					<li ng-class="{active: page == 0 ? 'active' : ''}"><a href="#/players/0" ng-click="page = 0"><i class="fa fa-trophy"></i>Series</a></li>
 					<li ng-class="{active: page == 1 ? 'active' : ''}"><a href="#/players" ng-click="page = 1"><i class="fa fa-male"></i>Players</a></li>

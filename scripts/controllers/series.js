@@ -5,6 +5,7 @@ angular.module('foosballApp').controller('seriesCtrl', function($scope, $http, $
 		} else {
 			$scope.seriesId = 0;
 		}
+		$scope.page = 0;
 
 		$scope.newScoreT1 = 0;
 		$scope.newScoreT2 = 0;

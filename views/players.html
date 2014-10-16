@@ -1,5 +1,4 @@
 <div id="players">
-	<h3>Players</h3>
 	<div class="playerBox col-xs-6 col-sm-4 col-md-3" ng-repeat="player in playersData | orderBy:'name'">
 		<div class="playerImage">
 			<a ng-href="#/players/{{player.id}}"><img ng-src="images/{{player.image}}" class="img img-circle" width="150px"></a>
