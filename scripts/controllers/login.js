@@ -9,7 +9,8 @@ angular.module('foosballApp').controller('loginCtrl', ['$scope', '$cookieStore',
 		$cookieStore.put('user', true);
 		$scope.user.login = true;
 		$scope.changeUrl('/dashboard');
-		window.location.href = '/foosballCloud/#/players/0';
+
+		window.location.href = location.origin + location.pathname + '#/players/0';
 	}
 
 	$scope.login = function() {
