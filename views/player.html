@@ -6,11 +6,11 @@
 	<div class="playerOuter col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="serie in seriesData">
 		<div class="playerInner">
 			<div class="seriesInfoHolder">
-				<span class="seriesTitle">Prize:</span>
+				<span class="fa fa-trophy" ng-class="{'fa-spin': serie.done == 1 && serie.redeemed == 0}"></span>
 				<span class="seriesValue">{{serie.prize}}</span>
 			</div>
 			<div class="seriesInfoHolder">
-				<span class="seriesTitle">Games played:</span>
+				<span class="fa fa-futbol-o" ng-class="{'fa-spin': serie.done == 0}"></span>
 				<span class="seriesValue">{{serie.played}}/{{serie.length}}</span>
 			</div>
 			<div>

@@ -25,6 +25,10 @@ angular.module('foosballApp').config(function($routeProvider, $locationProvider)
 		templateUrl: 'views/player.html',
 		controller: 'playerCtrl'
 	})
+	.when('/search', {
+		templateUrl: 'views/search.html',
+		controller: 'searchCtrl'
+	})
 	.otherwise({
 		templateUrl: 'views/login.html',
 		controller: 'loginCtrl'

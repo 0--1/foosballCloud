@@ -114,9 +114,9 @@ nav .navbar-header .spacer {
 	padding-left: 2em;
 }
 
-#player .seriesTitle {
-	font-size: 1.2em;
-	padding-right: 1em;
+#player .seriesInfoHolder .fa {
+	font-size: 1.5em;
+	margin-right: 0.5em;
 }
 
 #player .seriesValue {

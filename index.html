@@ -44,12 +44,12 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right hidden-xs">
 					<li><a class="clickable"><i class="fa fa-plus" ng-click="createSeriesModal()"></i></a></li>
-					<li><a href="#"><i class="fa fa-search" ng-click="createSeriesModal()"></i></a></li>
+					<li><a href="#/search"><i class="fa fa-search"></i></a></li>
 					<li><a href="#"><i class="fa fa-sign-out" ng-click="logout()"></i></a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right visible-xs">
 					<li ng-class="{active: page == 2 ? 'active' : ''}"><a href="#/charts" ng-click="page = 2"><i class="fa fa-line-chart"></i>Top Charts</a></li>
-					<li><a href="#"><i class="fa fa-search" ng-click="createSeriesModal()"></i>Search</a></li>
+					<li><a href="#/search"><i class="fa fa-search"></i>Search</a></li>
 					<li><a href="#"><i class="fa fa-sign-out" ng-click="logout()"></i> Sign Out</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
@@ -88,6 +88,7 @@
 	<script type="text/javascript" src="scripts/controllers/players.js"></script>
 	<script type="text/javascript" src="scripts/controllers/player.js"></script>
 	<script type="text/javascript" src="scripts/controllers/newSeries.js"></script>
+	<script type="text/javascript" src="scripts/controllers/search.js"></script>
 	<!-- modals -->
 </body>
 </html>
