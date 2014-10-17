@@ -35,7 +35,7 @@
 					<i class="fa fa-times-circle" ng-click="cancelScore()"></i>
 				</div>
 				<div ng-hide="enterScore || seriesData[0].done == 1" ng-click="recordScore()">Record score</div>
-				<button ng-show="seriesData[0].done == 1" class="btn btn-primary" ng-click="redeem()">Mark as Redeemed</button>
+				<button ng-show="seriesData[0].done == 1 && seriesData[0].redeemed == 0" class="btn btn-primary" ng-click="redeem()">Mark as Redeemed</button>
 			</div>
 			<div class="col-xs-3 teams">
 				<div>

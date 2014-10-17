@@ -157,7 +157,7 @@ nav .navbar-header .spacer {
 #player .seriesButton {
 	width: 70px;
 	height: 70px;
-	padding-top: 1.5em;
+	padding-top: 1.3em;
 	margin-top: 3em;
 	border-radius: 50%;
 }
@@ -213,4 +213,8 @@ nav .navbar-header .spacer {
 /* globals */
 .clickable {
 	cursor: pointer;
+}
+
+.fa-spin {
+	color: rgba(44,91,232,1.0);
 }
