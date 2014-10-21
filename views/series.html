@@ -19,11 +19,12 @@
 				</div>
 			</div>
 			<div class="col-xs-6 scores">
+				<div class="seriesAdv">
+					<span class="advantage" ng-show="seriesData[0].adv1 > 0"><i class="fa fa-arrow-circle-left"></i>{{seriesData[0].adv1}}</span>
+					<span class="advantage" ng-show="seriesData[0].adv2 > 0">{{seriesData[0].adv2}}<i class="fa fa-arrow-circle-right"></i></span>
+				</div>
 				<div ng-repeat="series in seriesData" ng-show="seriesData[0].series_id">
 					{{series.team1score}} - {{series.team2score}}
-				</div>
-				<div ng-show="enterScore">
-					<input type="number" class="form-control" ng-model="newScoreT1"> - <input type="number" class="form-control" ng-model="newScoreT2">
 				</div>
 				<div ng-show="enterScore">
 					<select class="form-control" ng-model="newScoreT1" ng-init="newScoreT1 = 0" ng-options="score for score in scores"></select>

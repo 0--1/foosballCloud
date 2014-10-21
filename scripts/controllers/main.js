@@ -28,16 +28,6 @@ angular.module('foosballApp').controller('mainCtrl', function($scope, $cookieSto
 	}
 
 	$scope.createSeriesModal = function() {
-		$scope.newSeriesPrize = 'Jamba';
-		$scope.newSeriesLength = 7;
-
-		$scope.teams = {one: [], two: []};
-
-		// for(var i = 0, n = $scope.playersData.length; i < n; i++) {
-		// 	$scope.team1players[i] = false;
-		// 	$scope.team2players[i] = false;
-		// }
-
 		$scope.seriesModal = $modal.open({templateUrl: 'views/modals/create_series.html', scope: $scope});
 	}
 

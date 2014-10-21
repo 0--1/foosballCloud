@@ -5,9 +5,25 @@
 	</div>
 	<div class="modal-body">
 		<div>
-			<table>
-				<tr><td class="title">Prize:</td><td><input type="text" class="form-control" ng-model="newSeriesPrize"></td></tr>
-				<tr><td class="title">Length:</td><td><input type="number" class="form-control" ng-model="newSeriesLength"></td></tr>
+			<table class="newSeriesInfo">
+				<tr>
+					<td class="title">Prize:</td>
+					<td><input type="text" class="form-control" ng-model="newSeriesPrize"></td>
+				</tr>
+				<tr>
+					<td class="title">Length:</td>
+					<td>
+						<select class="form-control" ng-model="newSeriesLength" ng-init="newSeriesLength = 7" ng-options="seriesLengthOption for seriesLengthOption in seriesLengthOptions"></select>
+					</td>
+				</tr>
+				<tr>
+					<td class="title">Handicapped:</td>
+					<td class="form-inline">
+						<select class="form-control" ng-model="newSeriesAdv" ng-init="newSeriesAdv = 0" ng-options="seriesAdvOption for seriesAdvOption in seriesAdvOptions"></select>
+						<label><input type="radio" ng-model="advTeam" value="red"> Team Red</label>
+						<label><input type="radio" ng-model="advTeam" value="blue"> Team Blue</label>
+					</td>
+				</tr>
 			</table>
 			<div>
 				<div class="teams">

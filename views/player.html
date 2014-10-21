@@ -27,6 +27,13 @@
 					</div>
 				</div>
 				<div class="seriesInfo">
+					<div class="seriesScore">
+						{{serie.team1total}} - {{serie.team2total}}
+					</div>
+					<div class="seriesScore">
+						<span class="advantage" ng-show="serie.adv1 > 0"><i class="fa fa-arrow-circle-left"></i>{{serie.adv1}}</span>
+						<span class="advantage" ng-show="serie.adv2 > 0">{{serie.adv2}}<i class="fa fa-arrow-circle-right"></i></span>
+					</div>
 					<div>
 						<a class="btn btn-default seriesButton" ng-href="#/series/{{serie.id}}">
 							<span>View</span>
