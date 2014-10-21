@@ -34,7 +34,7 @@ angular.module('foosballApp').controller('newSeriesCtrl', function($scope, $http
 	}
 
 	$scope.createSeries = function() {
-		if($scope.teams.one.length == 2 && $scope.teams.two.length == 2) {
+		if($scope.teams.one.length == 2 && $scope.teams.two.length == 2 && $scope.newSeriesPrize != '') {
 			var adv1 = 0;
 			var adv2 = 0;
 			if($scope.newSeriesAdv > 0) {
