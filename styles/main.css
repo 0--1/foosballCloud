@@ -243,6 +243,16 @@ nav .navbar-header .spacer {
 	color: red;
 }
 
+/* search */
+#search img {
+	margin: 1em;
+	border: 8px solid rgba(0,0,0,0);
+}
+
+#search img.playerSelected {
+	border: 8px solid green;
+}
+
 /* globals */
 .clickable {
 	cursor: pointer;

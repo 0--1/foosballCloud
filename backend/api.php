@@ -40,9 +40,18 @@ switch ($action) {
 		if($_GET['pid'] > 0) {
 			$sql .= " WHERE (team1player1 = ".$_GET['pid']." OR team1player2 = ".$_GET['pid']." OR team2player1 = ".$_GET['pid']." OR team2player2 = ".$_GET['pid'].")";
 		}
+		if($_GET['pid2'] > 0) {
+			$sql .= " AND (team1player1 = ".$_GET['pid2']." OR team1player2 = ".$_GET['pid2']." OR team2player1 = ".$_GET['pid2']." OR team2player2 = ".$_GET['pid2'].")";
+		}
+		if($_GET['pid3'] > 0) {
+			$sql .= " AND (team1player1 = ".$_GET['pid3']." OR team1player2 = ".$_GET['pid3']." OR team2player1 = ".$_GET['pid3']." OR team2player2 = ".$_GET['pid3'].")";
+		}
+		if($_GET['pid4'] > 0) {
+			$sql .= " AND (team1player1 = ".$_GET['pid4']." OR team1player2 = ".$_GET['pid4']." OR team2player1 = ".$_GET['pid4']." OR team2player2 = ".$_GET['pid4'].")";
+		}
 		$sql .= " GROUP BY series.id";
 		$res = mysql_query($sql);
-		$output = "";
+		$output = [];
 		while($row = mysql_fetch_assoc($res)) {
 			$output[] = $row;
 		}

@@ -23,10 +23,10 @@
 				<a class="navbar-brand" href="#">
 					<img src="images/logo1.png">
 				</a>
-				<a class="navbar-brand visible-xs" ng-class="{active: page == 0 ? 'active' : ''}" href="#/players/0" ng-click="page = 0">
+				<a class="navbar-brand visible-xs" ng-class="{active: main.page == 0 ? 'active' : ''}" href="#/players/0">
 					<i class="fa fa-trophy"></i>
 				</a>
-				<a class="navbar-brand visible-xs" ng-class="{active: page == 1 ? 'active' : ''}" href="#/players" ng-click="page = 1">
+				<a class="navbar-brand visible-xs" ng-class="{active: main.page == 1 ? 'active' : ''}" href="#/players">
 					<i class="fa fa-male"></i>
 				</a>
 				<a class="navbar-brand visible-xs" ng-click="createSeriesModal()">
@@ -38,13 +38,13 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav hidden-xs col-lg-4 col-md-3 col-sm-1"></ul>
 				<ul class="nav navbar-nav hidden-xs">
-					<li ng-class="{active: page == 0 ? 'active' : ''}"><a href="#/players/0" ng-click="page = 0"><i class="fa fa-trophy"></i>Series</a></li>
-					<li ng-class="{active: page == 1 ? 'active' : ''}"><a href="#/players" ng-click="page = 1"><i class="fa fa-male"></i>Players</a></li>
-					<li ng-class="{active: page == 2 ? 'active' : ''}"><a href="#/charts" ng-click="page = 2"><i class="fa fa-line-chart"></i>Top Charts</a></li>
+					<li ng-class="{active: main.page == 0 ? 'active' : ''}"><a href="#/players/0"><i class="fa fa-trophy"></i>Series</a></li>
+					<li ng-class="{active: main.page == 1 ? 'active' : ''}"><a href="#/players"><i class="fa fa-male"></i>Players</a></li>
+					<li ng-class="{active: main.page == 2 ? 'active' : ''}"><a href="#/charts"><i class="fa fa-line-chart"></i>Top Charts</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right hidden-xs">
 					<li><a class="clickable"><i class="fa fa-plus" ng-click="createSeriesModal()"></i></a></li>
-					<li><a href="#/search"><i class="fa fa-search"></i></a></li>
+					<li ng-class="{active: main.page == 3 ? 'active' : ''}"><a href="#/search"><i class="fa fa-search"></i></a></li>
 					<li><a href="#"><i class="fa fa-sign-out" ng-click="logout()"></i></a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right visible-xs">
