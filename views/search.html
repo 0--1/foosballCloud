@@ -1,5 +1,5 @@
 <div id="search">
-	<div>
+	<div class="playersList">
 		<img ng-repeat="player in playersData track by $index" ng-src="images/{{player.image}}" class="img img-circle clickable" width="120px" ng-class="{'playerSelected': selectedPlayers.indexOf(player.id) > -1}" ng-click="togglePlayer(player.id)">
 	</div>
 

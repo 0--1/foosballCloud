@@ -6,12 +6,11 @@
 	<div class="playerOuter col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="serie in seriesData">
 		<div class="playerInner">
 			<div class="seriesInfoHolder">
-				<span class="fa fa-trophy" ng-class="{'fa-spin': serie.done == 1 && serie.redeemed == 0}"></span>
-				<span class="seriesValue">{{serie.prize}}</span>
-			</div>
-			<div class="seriesInfoHolder">
-				<span class="fa fa-futbol-o" ng-class="{'fa-spin': serie.done == 0}"></span>
-				<span class="seriesValue">{{serie.played}}/{{serie.length}}</span>
+				<a ng-href="#/series/{{serie.id}}" ng-class="{'blue': serie.done == 1 && serie.team1total > serie.team2total, 'red': serie.done == 1 && serie.team1total < serie.team2total}">
+					<span ng-show="serie.done == 1">Final </span>
+					{{serie.team1total}} - {{serie.team2total}}
+					<span class="redeemIcon" ng-show="serie.done == 1 && serie.redeemed == 0"><img src="images/assets/paid-64x64.png" width="32px"></span>
+				</a>
 			</div>
 			<div>
 				<div class="seriesInfo teams">
@@ -26,18 +25,12 @@
 						</a>
 					</div>
 				</div>
-				<div class="seriesInfo">
-					<div class="seriesScore">
-						{{serie.team1total}} - {{serie.team2total}}
-					</div>
-					<div class="seriesScore">
-						<span class="advantage" ng-show="serie.adv1 > 0"><i class="fa fa-arrow-circle-left"></i>{{serie.adv1}}</span>
-						<span class="advantage" ng-show="serie.adv2 > 0">{{serie.adv2}}<i class="fa fa-arrow-circle-right"></i></span>
-					</div>
+				<div class="seriesInfo seriesDetails">
+					<div><i class="fa fa-trophy"></i>{{serie.prize}}</div>
+					<div><i class="fa fa-futbol-o"></i>{{serie.played}}/{{serie.length}} </div>
 					<div>
-						<a class="btn btn-default seriesButton" ng-href="#/series/{{serie.id}}">
-							<span>View</span>
-						</a>
+						<span class="advantage" ng-show="serie.adv1 > 0"><i class="fa fa-arrow-circle-left blue"></i>{{serie.adv1}}</span>
+						<span class="advantage" ng-show="serie.adv2 > 0">{{serie.adv2}}<i class="fa fa-arrow-circle-right red"></i></span>
 					</div>
 				</div>
 				<div class="seriesInfo teams">
