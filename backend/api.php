@@ -51,7 +51,7 @@ switch ($action) {
 		}
 		$sql .= " GROUP BY series.id";
 		$res = mysql_query($sql);
-		$output = [];
+		$output = array();
 		while($row = mysql_fetch_assoc($res)) {
 			$output[] = $row;
 		}
