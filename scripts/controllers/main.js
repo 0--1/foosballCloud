@@ -1,6 +1,6 @@
 angular.module('foosballApp').controller('mainCtrl', function($scope, $cookieStore, $location, $http, $modal) {
 	var init = function() {
-		$scope.main = {page: 0};
+		$scope.main = {page: 0, which: 'on'};
 
 		$scope.user = {};
 		if(!$cookieStore.get('user')) {

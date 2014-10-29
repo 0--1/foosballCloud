@@ -37,8 +37,25 @@ switch ($action) {
 	case 'ls': // list series
 		// $sql = "SELECT series.id, prize, length, team1player1, team1player2, team2player1, team2player2, done, redeemed, COUNT(matches.id) AS played FROM series LEFT JOIN matches ON matches.series_id = series.id";
 		$sql = "SELECT series.id, prize, length, team1player1, team1player2, team2player1, team2player2, adv1, adv2, done, redeemed, COUNT(matches.id) AS played, SUM(CASE WHEN matches.team1score > matches.team2score then 1 else 0 end) AS team1total, SUM(CASE WHEN matches.team1score < matches.team2score then 1 else 0 end) AS team2total FROM series LEFT JOIN matches ON matches.series_id = series.id";
+		
+		if($_GET['which'] == 'on') {
+			$sql .= " WHERE done = 0";
+		}
+		if($_GET['which'] == 're') {
+			$sql .= " WHERE done = 1 AND redeemed = 0";
+		}
+		if($_GET['which'] == 'co') {
+			$sql .= " WHERE done = 1 AND redeemed = 1";
+		}
+
+
 		if($_GET['pid'] > 0) {
-			$sql .= " WHERE (team1player1 = ".$_GET['pid']." OR team1player2 = ".$_GET['pid']." OR team2player1 = ".$_GET['pid']." OR team2player2 = ".$_GET['pid'].")";
+			if($_GET['which'] == 'al') {
+				$sql .= " WHERE";
+			} else {
+				$sql .= " AND";
+			}
+			$sql .= " (team1player1 = ".$_GET['pid']." OR team1player2 = ".$_GET['pid']." OR team2player1 = ".$_GET['pid']." OR team2player2 = ".$_GET['pid'].")";
 		}
 		if($_GET['pid2'] > 0) {
 			$sql .= " AND (team1player1 = ".$_GET['pid2']." OR team1player2 = ".$_GET['pid2']." OR team2player1 = ".$_GET['pid2']." OR team2player2 = ".$_GET['pid2'].")";
@@ -49,6 +66,7 @@ switch ($action) {
 		if($_GET['pid4'] > 0) {
 			$sql .= " AND (team1player1 = ".$_GET['pid4']." OR team1player2 = ".$_GET['pid4']." OR team2player1 = ".$_GET['pid4']." OR team2player2 = ".$_GET['pid4'].")";
 		}
+
 		$sql .= " GROUP BY series.id";
 		$res = mysql_query($sql);
 		$output = array();

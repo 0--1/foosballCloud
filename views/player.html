@@ -3,6 +3,15 @@
 		<img ng-src="images/{{playersData[playerId - 1].image}}" class="img img-circle" width="75px"> {{playersData[playerId - 1].name}}
 	</div>
 
+	<div class="seriesFilter">
+		<div class="btn-group btn-group-xs">
+			<button class="btn btn-default" ng-class="{bold: main.which == 'on'}" ng-click="main.which = 'on'; loadSeries()">Ongoing</button>
+			<button class="btn btn-default" ng-class="{bold: main.which == 're'}" ng-click="main.which = 're'; loadSeries()">Redeemable</button>
+			<button class="btn btn-default" ng-class="{bold: main.which == 'co'}" ng-click="main.which = 'co'; loadSeries()">Completed</button>
+			<button class="btn btn-default" ng-class="{bold: main.which == 'al'}" ng-click="main.which = 'al'; loadSeries()">All</button>
+		</div>
+	</div>
+
 	<div class="playerOuter col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="serie in seriesData">
 		<div class="playerInner">
 			<div class="seriesInfoHolder">

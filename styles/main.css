@@ -127,6 +127,15 @@ nav .navbar-header .spacer {
 }
 
 /* player */
+#player .seriesFilter {
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+#player .seriesFilter button {
+	padding: 0.5em;
+}
+
 #player .seriesInfoHolder {
 	background-color: #262626;
 	font-size: 25px;
@@ -268,7 +277,7 @@ nav .navbar-header .spacer {
 
 /* search */
 #search .playersList img {
-	margin: 1em;
+	margin: 0.5em;
 	border: 8px solid rgba(0,0,0,0);
 }
 
@@ -291,4 +300,8 @@ nav .navbar-header .spacer {
 
 .blue {
 	color: #125ce3 !important;
+}
+
+.bold {
+	font-weight: bold;
 }
