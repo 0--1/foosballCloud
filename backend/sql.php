@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>SQL Command Executer</title>
+	<link rel="stylesheet" type="text/css" href="../vendors/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../vendors/bootstrap/css/bootstrap-theme.css">
 	<script type="text/javascript" src="../vendors/angular/angular.js"></script>
 	<script type="text/javascript">
 		angular.module('sqlApp', [])
@@ -31,11 +33,9 @@
 </head>
 <body ng-app="sqlApp" ng-controller="mainCtrl">
 	<div>
-		Enter SQL command: <input type="text" ng-model="sql">
+		Enter SQL command: <input class="form-control" type="text" ng-model="sql">
 		<button ng-click="submit()">Execute</button>
 	</div>
-	<pre>
-		{{results}}
-	</pre>
+	<pre>{{results | json}}</pre>
 </body>
 </html>

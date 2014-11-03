@@ -1,6 +1,24 @@
 <div id="player">
 	<div ng-if="playerId > 0">
-		<img ng-src="images/{{playersData[playerId - 1].image}}" class="img img-circle" width="75px"> {{playersData[playerId - 1].name}}
+		<img ng-src="images/{{playersData[playerId - 1].image}}" class="img img-circle" width="75px">
+		<span class="playerName">{{playersData[playerId - 1].name}}</span>
+	</div>
+
+	<div class="playerStats row" ng-if="playerId > 0">
+		<div class="seriesStat col-xs-6">
+			<div>Total: {{totalSeries}}</div>
+			<div>won: {{wonSeries}}</div>
+			<div>lost: {{lostSeries}}</div>
+			<div>Ongoing: {{ongoingSeries}}</div>
+			<div>Redeemable: {{unredeemedSeries}}</div>
+		</div>
+		<div class="gameStat col-xs-6">
+			<div>Total: {{totalMatches}}</div>
+			<div>won: {{wonMatches}}</div>
+			<div>lost: {{lostMatches}}</div>
+			<div>scored: {{goalsScored}}</div>
+			<div>received: {{goalsReceived}}</div>
+		</div>
 	</div>
 
 	<div class="seriesFilter">

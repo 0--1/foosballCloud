@@ -91,6 +91,26 @@ switch ($action) {
 		mysql_query($sql);
 		break;
 
+	case 'ss': // series stat
+		$sql = "SELECT series.id, done, prize, length, team1player1, team1player2, team2player1, team2player2, adv1, adv2, redeemed, COUNT(matches.id) AS played, SUM(CASE WHEN matches.team1score > matches.team2score then 1 else 0 end) AS team1total, SUM(CASE WHEN matches.team1score < matches.team2score then 1 else 0 end) AS team2total FROM series LEFT JOIN matches ON matches.series_id = series.id WHERE (team1player1='".$_GET['pid']."' OR team1player2='".$_GET['pid']."' OR team2player1='".$_GET['pid']."' OR team2player2='".$_GET['pid']."') GROUP BY series.id";
+		$res = mysql_query($sql);
+		$output = "";
+		while($row = mysql_fetch_assoc($res)) {
+			$output[] = $row;
+		}
+		write($output);
+		break;
+
+	case 'ms': // match stat
+		$sql = "SELECT series.id, prize, length, team1player1, team1player2, team2player1, team2player2, team1score, team2score FROM series, matches WHERE matches.series_id = series.id AND (team1player1='".$_GET['pid']."' OR team1player2='".$_GET['pid']."' OR team2player1='".$_GET['pid']."' OR team2player2='".$_GET['pid']."')";
+		$res = mysql_query($sql);
+		$output = "";
+		while($row = mysql_fetch_assoc($res)) {
+			$output[] = $row;
+		}
+		write($output);
+		break;
+
 	default:
 		break;
 }

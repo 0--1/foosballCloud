@@ -127,6 +127,15 @@ nav .navbar-header .spacer {
 }
 
 /* player */
+#player .playerName {
+	font-size: 2em;
+	margin-left: 0.5em;
+}
+
+#player .playerStats {
+	margin: 1em 0;
+}
+
 #player .seriesFilter {
 	margin-top: 1em;
 	margin-left: 1em;
