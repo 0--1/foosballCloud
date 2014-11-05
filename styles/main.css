@@ -79,15 +79,11 @@ nav .navbar-header .spacer {
 /* new series modal */
 
 #newSeries .newSeriesInfo {
-	width: 70%;
+	width: 100%;
 }
 
 #newSeries tr td {
 	padding-bottom: 1em;
-}
-
-#newSeries .playerSelected {
-	border: 5px solid green;
 }
 
 #newSeries .title {
@@ -102,7 +98,7 @@ nav .navbar-header .spacer {
 }
 
 #newSeries img {
-	margin: 0.5em;
+	margin: 0.3em;
 }
 
 #newSeries .teams {
@@ -116,14 +112,16 @@ nav .navbar-header .spacer {
 	border-color: red !important;
 }
 
-#newSeries .teams:first-child {
-	background-color: rgba(196,22,83,0.4);
-	border-radius: 2%;
+#newSeries .teams img {
+	border: 5px solid rgba(255,255,255,0);
 }
 
-#newSeries .teams:last-child {
-	background-color: rgba(17,65,196,0.4);
-	border-radius: 2%;
+#newSeries .teams:first-child img.playerSelected {
+	border-color: #125ce3 !important;
+}
+
+#newSeries .teams:last-child img.playerSelected {
+	border-color: #f11a0c !important;
 }
 
 /* player */

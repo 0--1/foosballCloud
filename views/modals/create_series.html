@@ -17,25 +17,25 @@
 					</td>
 				</tr>
 				<tr>
-					<td class="title">Handicapped:</td>
-					<td class="form-inline">
-						<select class="form-control" ng-model="newSeriesAdv" ng-init="newSeriesAdv = 0" ng-options="seriesAdvOption for seriesAdvOption in seriesAdvOptions"></select>
-						<label><input type="radio" ng-model="advTeam" value="red"> Team Red</label>
-						<label><input type="radio" ng-model="advTeam" value="blue"> Team Blue</label>
+					<td class="title">Handi:</td>
+					<td><form class="form-inlined">
+						<label class="blue" style="display: inline-block; float: left; margin-top: 0.5em;"><input type="radio" ng-model="advTeam" value="blue"> Blue</label>
+						<select class="form-control" style="width: 30%; display: inline-block; float: left; margin: 0 1em;" ng-model="newSeriesAdv" ng-init="newSeriesAdv = 0" ng-options="seriesAdvOption for seriesAdvOption in seriesAdvOptions"></select>
+						<label class="red" style="display: inline-block; float: left; margin-top: 0.5em;"><input type="radio" ng-model="advTeam" value="red"> Red</label></form>
 					</td>
 				</tr>
 			</table>
 			<div>
 				<div class="teams">
-					<div class="teamTitle">Team 1</div>
+					<div class="teamTitle blue">Team Blue</div>
 					<div>
-						<img ng-repeat="player in playersData" ng-src="images/{{((teams.one.length > 1 && teams.one.indexOf(player.id) < 0) || teams.two.indexOf(player.id) > -1) ? 'bw-' : ''}}{{player.image}}" class="img img-circle" width="60px" ng-class="{'playerSelected': teams.one.indexOf(player.id) > -1}" ng-click="assignPlayer('one', player.id)">
+						<img ng-repeat="player in playersData" ng-src="images/{{((teams.one.length > 1 && teams.one.indexOf(player.id) < 0) || teams.two.indexOf(player.id) > -1) ? 'bw-' : ''}}{{player.image}}" class="img img-circle" width="65px" ng-class="{'playerSelected': teams.one.indexOf(player.id) > -1}" ng-click="assignPlayer('one', player.id)">
 					</div>
 				</div>
 				<div class="teams">
-					<div class="teamTitle">Team 2</div>
+					<div class="teamTitle red">Team Red</div>
 					<div>
-						<img ng-repeat="player in playersData" ng-src="images/{{((teams.two.length > 1 && teams.two.indexOf(player.id) < 0) || teams.one.indexOf(player.id) > -1) ? 'bw-' : ''}}{{player.image}}" class="img img-circle" width="60px" ng-class="{'playerSelected': teams.two.indexOf(player.id) > -1}" ng-click="assignPlayer('two', player.id)">
+						<img ng-repeat="player in playersData" ng-src="images/{{((teams.two.length > 1 && teams.two.indexOf(player.id) < 0) || teams.one.indexOf(player.id) > -1) ? 'bw-' : ''}}{{player.image}}" class="img img-circle" width="65px" ng-class="{'playerSelected': teams.two.indexOf(player.id) > -1}" ng-click="assignPlayer('two', player.id)">
 					</div>
 				</div>
 			</div>

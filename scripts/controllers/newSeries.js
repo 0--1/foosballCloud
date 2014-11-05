@@ -38,9 +38,9 @@ angular.module('foosballApp').controller('newSeriesCtrl', function($scope, $http
 			var adv1 = 0;
 			var adv2 = 0;
 			if($scope.newSeriesAdv > 0) {
-				if($scope.advTeam == 'red') {
+				if($scope.advTeam == 'blue') {
 					adv1 = $scope.newSeriesAdv;
-				} else if($scope.advTeam == 'blue') {
+				} else if($scope.advTeam == 'red') {
 					adv2 = $scope.newSeriesAdv;
 				}
 			}

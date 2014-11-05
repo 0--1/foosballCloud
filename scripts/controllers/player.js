@@ -100,7 +100,7 @@ angular.module('foosballApp').controller('playerCtrl', function($scope, $routePa
 				$scope.goalsScored += parseInt($scope.playerMatchesStat[i].team1score);
 				$scope.goalsReceived += parseInt($scope.playerMatchesStat[i].team2score);
 
-				if($scope.playerMatchesStat[i].team1score > $scope.playerMatchesStat[i].team2score) {
+				if(parseInt($scope.playerMatchesStat[i].team1score) > parseInt($scope.playerMatchesStat[i].team2score)) {
 					$scope.wonMatches++;
 				} else {
 					$scope.lostMatches++;
@@ -109,7 +109,7 @@ angular.module('foosballApp').controller('playerCtrl', function($scope, $routePa
 				$scope.goalsScored += parseInt($scope.playerMatchesStat[i].team2score);
 				$scope.goalsReceived += parseInt($scope.playerMatchesStat[i].team1score);
 
-				if($scope.playerMatchesStat[i].team1score < $scope.playerMatchesStat[i].team2score) {
+				if(parseInt($scope.playerMatchesStat[i].team1score) < parseInt($scope.playerMatchesStat[i].team2score)) {
 					$scope.wonMatches++;
 				} else {
 					$scope.lostMatches++;
