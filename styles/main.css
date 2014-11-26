@@ -199,9 +199,8 @@ nav .navbar-header .spacer {
 	font-size: 20px;
 	margin-top: 0.5em;
 	width: 100%;
-	overflow-y: scroll;
-	overflow-x: hidden;
-	/*text-overflow: ellipsis;*/
+	overflow: hidden;
+	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 

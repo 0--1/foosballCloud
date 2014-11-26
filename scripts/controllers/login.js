@@ -8,9 +8,9 @@ angular.module('foosballApp').controller('loginCtrl', ['$scope', '$cookieStore',
 		// temporary auto login
 		$cookieStore.put('user', true);
 		$scope.user.login = true;
-		$scope.changeUrl('/dashboard');
+		$scope.changeUrl('/searcn');
 
-		window.location.href = location.origin + location.pathname + '#/players/0';
+		window.location.href = location.origin + location.pathname + '#/search';
 	}
 
 	$scope.login = function() {

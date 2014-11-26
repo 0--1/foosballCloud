@@ -1,6 +1,6 @@
 angular.module('foosballApp').controller('searchCtrl', function($scope, $routeParams, $http) {
 	var init = function() {
-		$scope.main.page = 3;
+		$scope.main.page = 0;
 		$scope.main.which = 'on';
 
 		$scope.selectedPlayers = [];
@@ -26,7 +26,7 @@ angular.module('foosballApp').controller('searchCtrl', function($scope, $routePa
 
 	$scope.searchSeries = function() {
 		$scope.seriesData = {};
-		if($scope.selectedPlayers.length > 0) {
+		if($scope.selectedPlayers.length >= 0) {
 			$http({method: 'get', url: 'backend/api.php', params: {
 					a: 'ls',
 					pid: $scope.selectedPlayers[0],

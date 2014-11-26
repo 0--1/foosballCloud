@@ -116,6 +116,9 @@ angular.module('foosballApp').controller('playerCtrl', function($scope, $routePa
 				}
 			}
 		}
+
+		$scope.seriesStat1 = [['Ongoing', $scope.ongoingSeries],['Redeemable', $scope.unredeemedSeries]];
+		$scope.seriesStat2 = [['Ongoing winning', $scope.ongoingSeries],['Redeemable payable', $scope.unredeemedSeries]];
 	}
 
 	init();
